@@ -23,14 +23,25 @@
             .header-top {
                 background-image: url("/images/header.png");
                 background-size: cover;
-                height: 55vh;
+                height: 45vh;
                 width: 100vw;
 
-                padding-top: 10vh;
+                padding-top: 20vh;
+            }
+
+            .titulo-header {
+                font-size: 20pt;
+                margin-left: 60px;
+                color: white;
+            }
+            
+            .titulo-header h1 {
+                font-weight: 400;
+                font-style: normal;
+                text-shadow: #242322 1px 0 10px;
             }
 
             .objetos-header {
-                margin: auto;
                 width: 80%;
             }
 
@@ -161,21 +172,89 @@
                 font-size: 20pt;
             }
 
+            .tooltip-link {
+                text-decoration: none;
+                color: black;
+            }
 
-            @media (max-height: 800px) {
-                .header-top {
-                    height: 65vh;
-                    padding-top: 4vh;
-                }
+            .tooltip-linha {
+                background-color: #dbe270;
+                padding-left: 5px;
+                padding-right: 5px;
+            }
+
+            .tooltip-linha:hover {
+                background-color: #e4ee57;
+            }
+
+            .tooltip-lado {
+                margin-top: 20px;
+                width: 300px;
+                background-color: #fde7d0;
+                padding-left: 10px;
+                padding-right: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
+
+                border-style: dotted;
+                border-width: 3px;
+                border-color: black;
+            }
+
+            .tooltip-lado a {
+                background-color: #fde7d0;
+            }
+
+            .tooltip-lado-titulo {
+                font-size: 14pt;
+            }
+
+            .tooltip-lado-titulo p {
+                margin: 0 0 0 0;
+            }
+
+            .barratopo {
+                width: 100vw;
+                height: 80px;
+                background-color: #127bca;
+            }
+
+            .barratopo-links {
+                display: flex;
+                align-items: center;
+                height: 100%;
+                margin-left: 20px;
+            }
+
+            .barratopo-links a {
+                color: white;
+                margin-right: 13px;
+                text-decoration: none;
+                font-size: 15pt;
             }
 
             @media (max-width: 790px) {
+                .barratopo-links {
+                    width: 90%;
+                    margin: auto;
+                }
+
+                .barratopo-links a {
+                    font-size: 13pt;
+                }
+
+                .titulo-header {
+                    margin: auto;
+                    text-align: center;
+                    width: 90%;
+                }
+
                 .lado-titulo {
                     width: 70%;
                 }
 
                 .caixa-checkin {
-                    width: 90%;
+                    width: 100%;
                 }
 
                 .caixa-experado {
@@ -183,8 +262,8 @@
                 }
 
                 .header-top {
-                    height: 98vh;
-                    padding-top: 4vh;
+                    height: 55vh;
+                    padding-top: 5vh;
                 }
 
                 .imagem-equacao img {
@@ -209,27 +288,39 @@
             </div>
         </div>
 
+        <div class="barratopo">
+            <div class="barratopo-links">
+                <a href="/primeiro.html"><b>Primeiro</b></a>
+                <a href="/segundo.html"><b>Segundo</b></a>
+                <a href="/terceiro.html"><b>Terceiro</b></a>
+                <a href="/quarto.html"><b>Quarto</b></a>
+            </div>
+        </div>
+
         <div class="header-top">
-            <div class="lado-titulo">
-                <h1>CHECK-IN</h1>
+            <div class="titulo-header">
+                <h1>Matemática e Geografia</h1>
             </div>
+        </div>
 
-            <div class="objetos-header">
-                <div class="checkin caixa-checkin">
-                    <p>Desde os primórdios da civilização, a humanidade sentiu a necessidade de desenvolver ferramentas para resolver problemas práticos do dia a dia, como medir terras ou prever colheitas. Dentre essas ferramentas, surgiram as equações, fundamentais para descrever e resolver situações envolvendo incógnitas. O expoente de uma incógnita, como o <i>x</i>, desempenha um papel importante na classificação dessas equações.</p>
-
-                    <p>Na imagem dessa abertura podemos ver algumas equações.</p>
-
-                    <div class="lista-checkin">
-                        <p><span class="span-azul"><b>1. </b></span>Como saber quando uma equação é do segundo grau?</p>
-                        <p><span class="span-azul"><b>2. </b></span>Você sabe como resolver uma equação como essa?</p>
-                    </div>
-                </div>
-            </div>
+        <div class="lado-titulo">
+            <h1>CHECK-IN</h1>
         </div>
 
         <div class="texto-geral">
             <div class="corpo-texto">
+                <div class="objetos-header">
+                    <div class="checkin caixa-checkin">
+                        <p>Desde os primórdios da civilização, a humanidade sentiu a necessidade de desenvolver ferramentas para resolver problemas práticos do dia a dia, como medir terras ou prever colheitas. Dentre essas ferramentas, surgiram as equações, fundamentais para descrever e resolver situações envolvendo incógnitas. O expoente de uma incógnita, como o <i>x</i>, desempenha um papel importante na classificação dessas equações.</p>
+
+                        <p>Na imagem dessa abertura podemos ver algumas equações.</p>
+
+                        <div class="lista-checkin">
+                            <p><span class="span-azul"><b>1. </b></span>Como saber quando uma equação é do segundo grau?</p>
+                            <p><span class="span-azul"><b>2. </b></span>Você sabe como resolver uma equação como essa?</p>
+                        </div>
+                    </div>
+                </div>
                 
                 <div class="checkin caixa-experado">
                     <details>
@@ -260,14 +351,16 @@
 
                 <h2>Definição de equação do 2º grau com uma incógnita</h2>
 
-                <p><b>Equação do 2º grau</b>, ou <b>equação quadrática</b>, com uma incógnita é toda equação do tipo \(ax^2+bx+c=0\), em que \(x\) representa a incógnita e \(a\), \(b\) e \(c\) são os coeficientes numéricos e representam números reais, com \(a\neq0\).</p>
+                <!-- <div class="tooltip-lado"><div class="tooltip-lado-titulo"><p>O que é: <b>incógnita</b></p></div><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione iure dignissimos</p></div> -->
+
+                <p><b>Equação do 2º grau</b>, ou <b>equação quadrática</b>, com uma <a href="#!" class="tooltip-link" onclick="consultarGlossario(this);"><span class="tooltip-linha">incógnita</span></a> é toda equação do tipo \(ax^2+bx+c=0\), em que \(x\) representa a incógnita e \(a\), \(b\) e \(c\) são os coeficientes numéricos e representam números reais, com \(a\neq0\).</p>
 
                 <div class="imagem-equacao">
                     <img src="/images/equacao.png">
                 </div>
 
                 <ul>
-                    <li>\(a\) é coeficiente numérico de \(x^2\);</li>
+                    <li><a href="#!" class="tooltip-link" onclick="consultarGlossario(this);"><span class="tooltip-linha">\(a\)</span></a> é coeficiente numérico de \(x^2\);</li>
                     <li>\(b\) é coeficiente numérico de \(x\);</li>
                     <li>\(c\) é denominado termo independente.</li>
                 </ul>
