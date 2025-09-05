@@ -187,18 +187,23 @@
                 background-color: #e4ee57;
             }
 
-            .tooltip-lado {
+            .tooltip-estilo {
                 margin-top: 20px;
                 width: 300px;
                 background-color: #fde7d0;
-                padding-left: 10px;
-                padding-right: 10px;
-                padding-top: 5px;
-                padding-bottom: 5px;
+                padding-left: 15px;
+                padding-right: 15px;
+                padding-top: 10px;
+                padding-bottom: 10px;
 
-                border-style: dotted;
-                border-width: 3px;
+                border-style: solid;
+                border-width: 2px;
                 border-color: black;
+                border-radius: 5px;
+            }
+
+            .tooltip-lado {
+                width: 300px;
             }
 
             .tooltip-lado a {
@@ -206,11 +211,33 @@
             }
 
             .tooltip-lado-titulo {
+                display: flex;
+                align-items: center;
                 font-size: 14pt;
+            }
+
+            .tooltip-lado-titulo img {
+                border-style: solid;
+                border-color: #242322;
+                border-width: 2px;
+            }
+
+            .tooltip-lado-titulo div {
+                margin-right: 10px;
             }
 
             .tooltip-lado-titulo p {
                 margin: 0 0 0 0;
+            }
+
+            .tooltip-mouse {
+                display: none; /* delegar tudo abaixo depois */
+
+                position:absolute;
+            }
+
+            .tooltip-linha:hover .tooltip-mouse {
+                display: block;
             }
 
             .barratopo {
@@ -233,11 +260,12 @@
                 font-size: 15pt;
             }
 
+
             @media (max-width: 790px) {
                 .tooltip-lado {
                     width: 100%;
                 }
-                
+
                 .barratopo-links {
                     width: 90%;
                     margin: auto;
@@ -277,6 +305,7 @@
                 .imagem-lightbox img {
                     max-width: 100%;
                 }
+
             }
         </style>
     </head>
@@ -355,16 +384,18 @@
 
                 <h2>Definição de equação do 2º grau com uma incógnita</h2>
 
+                <div id="waiting-tooltip" class="tooltip-estilo tooltip-mouse"><div class="tooltip-lado-titulo"><p>O que é: <b>incógnita</b></p></div><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione iure dignissimos</p></div>
+
                 <!-- <div class="tooltip-lado"><div class="tooltip-lado-titulo"><p>O que é: <b>incógnita</b></p></div><p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ratione iure dignissimos</p></div> -->
 
-                <p><b>Equação do 2º grau</b>, ou <b>equação quadrática</b>, com uma <a href="#!" class="tooltip-link" onclick="consultarGlossario(this);"><span class="tooltip-linha">incógnita</span></a> é toda equação do tipo \(ax^2+bx+c=0\), em que \(x\) representa a incógnita e \(a\), \(b\) e \(c\) são os coeficientes numéricos e representam números reais, com \(a\neq0\).</p>
+                <p><b>Equação do 2º grau</b>, ou <b>equação quadrática</b>, com uma <a href="#!" class="tooltip-link" onmouseover="mouseTooltip(this)" onclick="consultarGlossario(this);"><span class="tooltip-linha">incógnita</span></a> é toda equação do tipo \(ax^2+bx+c=0\), em que \(x\) representa a incógnita e \(a\), \(b\) e \(c\) são os coeficientes numéricos e representam números reais, com \(a\neq0\).</p>
 
                 <div class="imagem-equacao">
                     <img src="/images/equacao.png">
                 </div>
 
                 <ul>
-                    <li><a href="#!" class="tooltip-link" onclick="consultarGlossario(this);"><span class="tooltip-linha">\(a\)</span></a> é coeficiente numérico de \(x^2\);</li>
+                    <li><a href="#!" class="tooltip-link" onmouseover="mouseTooltip(this)" onclick="consultarGlossario(this);"><span class="tooltip-linha">\(a\)</span></a> é coeficiente numérico de \(x^2\);</li>
                     <li>\(b\) é coeficiente numérico de \(x\);</li>
                     <li>\(c\) é denominado termo independente.</li>
                 </ul>
